@@ -11,6 +11,7 @@
   "author": "Jessie Tarrosa",
   "license": "ISC",
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-facebook-login": "^4.1.1",
