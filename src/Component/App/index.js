@@ -1,10 +1,10 @@
 import React from 'react'
-// import { Facebook } from '@Component/Facebook'
+import { FacebookLogin } from '@Component/FacebookLogin'
 
 export function App () {
   return (
     <div className='container'>
-      Hello World
+      <FacebookLogin />
     </div>
   )
 }
