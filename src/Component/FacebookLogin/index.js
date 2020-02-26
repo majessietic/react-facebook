@@ -65,12 +65,9 @@ export function FacebookLogin () {
 		console.log('Fetching information')
 		window.FB.api('/me?fields=id,name,email,photos', function(user) {
 			console.log(user)
-      console.log(`Successful Login from facebook: ${user.name}`)
-      setProfile({
-        auth: true,
-        name: user.name,
-        photos: user.photos
-      })
+      return (
+        <div>Hi</div>
+      )
     })
   }
 
