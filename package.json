@@ -7,7 +7,7 @@
     "dev": "set HTTPS=true && npm start",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -b master"
+    "deploy": "gh-pages -d dist"
   },
   "author": "Jessie Tarrosa",
   "license": "ISC",
@@ -33,5 +33,13 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
-  "description": ""
+  "description": "Integrated with facebook graph api",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majessietic/react-gallery.git"
+  },
+  "bugs": {
+    "url": "https://github.com/majessietic/react-gallery/issues"
+  },
+  "homepage": "https://majessietic.github.io/react-gallery"
 }
