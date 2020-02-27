@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import FacebookLogin from 'react-facebook-login'
 import { api_id } from '@Component/Facebook/api_id'
-import { state } from '@Component/Facebook/state'
 
 export function Facebook () {
-  const [fbME, setFbMe] = useState(state)
+  const [fbME, setFbMe] = useState({
+    auth: false,
+    name: '',
+    email: '',
+    picture: '',
+    photos: ''
+  })
 
   const componentClicked = () => {
     console.log('Facebook Button Click')
@@ -22,25 +27,36 @@ export function Facebook () {
   }
 
   let facebookData
+  const { auth, name, email, picture, photos } = fbME
 
-  fbME.auth ? facebookData = (
+  auth ? facebookData = (
     <div>
-      Hello There
+      <div className='sideBar'>
+        <div className='profile'>
+          <img className='profilePic' src={picture} alt={name} />
+          <h2>{name}</h2>
+        </div>
+      </div>
+      <ul className="gallery">
+        {photos.map(photo => {
+          return <li key={photo.id}>
+            <img src={photo.picture} />
+          </li>
+        })}
+      </ul>
     </div>
   ) : facebookData = (
     <FacebookLogin
       appId={api_id}
       autoLoad={true}
-      fields="name,email,picture,photos{webp_images}"
+      fields="name,email,picture,photos.limit(100){picture}"
       onClick={componentClicked}
       callback={responseFacebook}
     />
   )
 
-  console.log(fbME)
-
   return (
-    <div>
+    <div className='content'>
       {facebookData}
     </div>
   )
