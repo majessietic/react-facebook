@@ -1,10 +1,9 @@
 {
-  "name": "facebook-react-app",
+  "name": "react-gallery",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "dev": "set HTTPS=true && npm start",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -41,5 +40,5 @@
   "bugs": {
     "url": "https://github.com/majessietic/react-gallery/issues"
   },
-  "homepage": "https://majessietic.github.io/react-gallery"
+  "homepage": "https://majessietic.github.io/react-gallery/"
 }
